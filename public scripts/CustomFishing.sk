@@ -7,7 +7,6 @@ on load:
     set {-FishingLoot::legendary::*} to enchanted book of mending, turtle scute
 
 
-
 # ----- [Fishing Event] ----- #
 
 on fish:
