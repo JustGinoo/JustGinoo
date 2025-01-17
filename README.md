@@ -12,8 +12,8 @@
 
 
 # 📩 Contact
-- **Discord:** justginoo
-- **E-mail:** wild.gino@yahoo.com
+- **Discord:** ``justginoo``
+- **E-mail:** ``wild.gino@yahoo.com``
 <br>
 
 ## 💎 AdventureSMP
@@ -21,8 +21,8 @@ AdventureSMP is a minecraft SMP server with lots of custom features,\
 that i build up together with [@sluhtie](https://github.com/sluhtie/sluhtie).
 Feel free to join!
 
-- **IP:** AdventureSMP.de
-- **Version:** Java 1.21+
+- **IP:** ``AdventureSMP.de``
+- **Version:** ``Java 1.21+``
 - **Discord:** [adventuresmp](https://discord.gg/adventuresmp)
 - **TikTok:** [@adventuresmp](https://www.tiktok.com/@adventuresmp.de)
 <br>
@@ -34,6 +34,6 @@ Feel free to join!
 VirtuLife is a **minecraft reallife/roleplay server** with lots of unique features,\
 that i am only working on when im bored. Any updates are posted on the discord.
 
-- **IP:** VirtuLife.net
-- **Version:** Java 1.21+
+- **IP:** ``VirtuLife.net``
+- **Version:** ``Java 1.21+``
 - **Discord:** [virtulife](https://discord.gg/jxbYSTb3eE)
