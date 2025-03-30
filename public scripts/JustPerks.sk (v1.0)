@@ -1,0 +1,168 @@
+
+# Skript Made by JustGinoo
+# JustPerks (v1.1)
+
+# !!! Requires SkBee to work !!!
+
+# ----- [Setup GUI-items] ----- #
+
+on load:
+    delete {-perks::*}
+    set {-perks::nohunger} to cooked beef named "&f&lNO HUNGER" with lore "&7Dont lose hunger"
+    set {-perks::concrete} to white concrete powder named "&f&lINSTAND CONCRETE" with lore "&7Concrete powder converts%nl%&7to concrete when placing"
+    set {-perks::nofall} to feather named "&f&lNO FALLDAMAGE" with lore "&7Immune to falldamage"
+    set {-perks::nodrown} to turtle helmet with item flag hide attributes named "&f&lNO DROWING" with lore "&7Immune to drowningdamage"
+    set {-perks::nofire} to lava bucket named "&f&lNO FIREDAMAGE" with lore "&7Immune to firedamage"
+    set {-perks::haste} to golden pickaxe with item flag hide attributes named "&f&lHASTE" with lore "&7Permanent haste II effect"
+    set {-perks::speed} to golden boots with item flag hide attributes named "&f&lSPEED" with lore "&7Permanent speed II effect"
+    set {-perks::dolphins_grace} to conduit named "&f&lDOLPHINS GRACE" with lore "&7Permanent dolphins grace effect"
+    set {-perks::jump_boost} to rabbit foot named "&f&lJUMPBOOST" with lore "&7Permanent jumpboost II effect"
+    set {-perks::night_vision} to golden carrot named "&f&lNIGHTVISION" with lore "&7Permanent nightvision effect"
+    set {-perks::keepxp} to experience bottle named "&f&lKEEP XP" with lore "&7Dont lose XP on death"
+    set {-perks::keepinv} to totem of undying named "&f&lKEEP INVENTORY" with lore "&7Dont lose items on death"
+
+
+
+# ----- [Command to open GUI] ----- #
+
+command /perks [<string>]:
+    trigger:
+        set {_gui} to chest inventory named "&6&lPERKS" with 6 rows
+        set slot (integers between 0 and 53) of {_gui} to gray stained glass pane
+        set slot (9, 18, 27, 36, 13, 22, 31, 40, 17, 26, 35, 44) of {_gui} to white stained glass pane
+        open {_gui} to player
+        set (metadata tag "perksGUI" of player) to {_gui}
+        loadPerkGUI(player)
+
+
+
+# ----- [Keep effects] ----- #
+
+on respawn:
+    updateEffects(player)
+
+on connect:
+    while player is connected:
+        validatePerks(player)
+        updateEffects(player)
+        wait 20 ticks
+
+
+
+# ----- [Inventoryclick handler] ----- #
+
+on inventory click:
+    player's top inventory = (metadata tag "perksGUI" of player)
+    cancel event
+    event-inventory = player's current inventory
+    (tag values of tag "paper:stained_glass_panes", air) does not contain event-item
+    item cooldown of event-slot for player is 0 seconds
+    set {_perk} to (string tag "Perk" of custom nbt of event-item)
+    {_perk} is set
+
+    if player does not have permission "perks.%{_perk}%":
+        play sound "block.note_block.didgeridoo" with pitch 0.75 to player
+        stop
+
+    if (string list tag "custom;ActivatedPerks" of nbt of player) contains {_perk}:
+        remove {_perk} from (string list tag "custom;ActivatedPerks" of nbt of player)
+        play sound "block.wooden_button.click_off" with volume 2 and pitch 1.5 to player
+    else:
+        add {_perk} to (string list tag "custom;ActivatedPerks" of nbt of player)
+        play sound "block.wooden_button.click_on" with volume 2 and pitch 1.5 to player
+
+    updateEffects(player) if {_perk} = "haste", "speed", "night_vision", "jump_boost" or "dolphins_grace"
+    set item cooldown of event-slot for player to 0.5 seconds
+    loadPerkGUI(player)
+
+
+
+# ----- [Validating perks] ----- #
+
+function validatePerks(p: player):
+    loop {-perks::*}:
+        add loop-index to {_allowedPerks::*} if {_p} has permission "perks.%loop-index%"
+    set {_activatedPerks::*} to (string list tag "custom;ActivatedPerks" of nbt of {_p})
+    loop {_activatedPerks::*}:
+        {_allowedPerks::*} does not contain loop-value
+        remove loop-value from {_activatedPerks::*}
+    set (string list tag "custom;ActivatedPerks" of nbt of {_p}) to {_activatedPerks::*}
+
+
+
+# ----- [Update effects] ----- #
+
+function updateEffects(p: player):
+    wait 1 tick
+    set {_effects::*} to (string list tag "custom;ActivatedPerks" of nbt of {_p})
+    loop {-perks::*}:
+        set {_effect} to (loop-index.replace("_", " ") parsed as potion effect type)
+        remove {_effect} from potion effects of {_p}
+        {_effects::*} contains loop-index
+        set {_tier} to 2 if ({_effect} = jump boost, speed or haste)
+        add (infinite potion effect of {_effect} of tier ({_tier} ? 1) without particles) to potion effects of {_p}
+
+
+
+# ----- [Load GUI-items] ----- #
+
+function loadPerkGUI(p: player):
+
+    set {_slot} to 10
+    loop {-perks::*}:
+        set {_perk} to loop-index
+
+        set {_status.lore} to "&f&lsᴛᴀᴛᴜs: &aᴏɴ%nl% %nl%&eᴄʟɪᴄᴋ ᴛᴏ ᴛᴏɢɢʟᴇ" if (string list tag "custom;ActivatedPerks" of nbt of {_p}) contains {_perk} else "&f&lsᴛᴀᴛᴜs: &cᴏғғ%nl% %nl%&eᴄʟɪᴄᴋ ᴛᴏ ᴛᴏɢɢʟᴇ"
+        set {_status.lore} to " %nl%&4&lɴᴏ ᴘᴇʀᴍɪssɪᴏɴ" if {_p} does not have permission "perks.%{_perk}%"
+
+        set {_item} to loop-value
+        add {_status.lore} to lore of {_item}
+        set slot {_slot} of {_p}'s current inventory to {_item} with custom nbt from "{Perk:""%{_perk}%"",Cost:%{_price} ? 0%}"
+
+        set {_statusItem} to green stained glass pane named "&aᴀᴄᴛɪᴠᴀᴛᴇᴅ"
+        set {_statusItem} to red stained glass pane named "&cᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ" if (string list tag "custom;ActivatedPerks" of nbt of {_p}) does not contain {_perk}
+        set slot {_slot}+9 of {_p}'s current inventory to {_statusItem}
+
+        add 1 to {_slot}
+        add 1 to {_slot} if {_slot} is 13 or 31
+        add 11 to {_slot} if {_slot} is 17
+
+
+
+# ----- [Prevent damage (fire/fall/drown)] ----- #
+
+on damage of player:
+    damage cause is lava, fire or burning:
+        cancel event if (string list tag "custom;ActivatedPerks" of nbt of victim) contains "NoFire"
+
+    damage cause is fall:
+        cancel event if (string list tag "custom;ActivatedPerks" of nbt of victim) contains "NoFall"
+
+    damage cause is drowning:
+        cancel event if (string list tag "custom;ActivatedPerks" of nbt of victim) contains "NoDrown"
+
+
+# ----- [Prevent losing hunger] ----- #
+
+on food bar change:
+    (string list tag "custom;ActivatedPerks" of nbt of player) contains "NoHunger"
+    set player's food level to 20
+
+
+# ----- [Keep XP/Inventory] ----- #
+
+on death of player:
+    damage cause != plugin
+    if (string list tag "custom;ActivatedPerks" of nbt of victim) contains "KeepInv":
+        {-combatlog::%uuid of victim%} is not set
+        keep the inventory
+        clear drops
+    keep the experiences if (string list tag "custom;ActivatedPerks" of nbt of victim) contains "KeepXP"
+
+
+# ----- [Convert concrete] ----- #
+
+on place:
+    event-block is tagged as tag "paper:concrete_powder"
+    (string list tag "custom;ActivatedPerks" of nbt of player) contains "Concrete"
+    set block to ("%type of block%".replace(" powder", "") parsed as itemtype)
