@@ -1,0 +1,31 @@
+
+# Skript Made by JustGinoo
+# SimpleDamageindicator (v1.0)
+
+# ----- [ Damageindicator ] ----- #
+
+on damage:
+  attacker is a player:
+    set {_case} to random integer between 0 and 1000000
+    spawn text display at victim's eye location
+    set {_dt::%{_case}%} to last spawned text display
+    set display text background color of {_dt::%{_case}%} to bukkitColor(0,255,255,255)
+    set display default text background of {_dt::%{_case}%} to false
+    set display billboard of {_dt::%{_case}%}  to vertical
+    set display text of {_dt::%{_case}%}  to "&4- %final damage% ❤"
+    set {_loc} to location of {_dt::%{_case}%}
+    add (random number between -0.5 and 0.5) to z-coord of {_loc}
+    add (random number between -0.5 and 0.5) to x-coord of {_loc}
+    remove 0.2 from y-coord of {_loc}
+    set {_i} to 0
+    set {_opacity} to 200
+    while {_dt::%{_case}%} is alive:
+      if {_i} <= 40:
+        set display text opacity of {_dt::%{_case}%} to {_opacity} - 1
+        add 1 to {_i}
+        add 0.01 to y-coord of {_loc}
+        teleport {_dt::%{_case}%} to {_loc}
+        wait 1 tick
+      else:
+        kill {_dt::%{_case}%}
+        wait 1 tick
