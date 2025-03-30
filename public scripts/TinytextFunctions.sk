@@ -1,0 +1,37 @@
+
+# Skript Made by JustGinoo
+# TinytextFunctions (v1.0)
+
+# Usage:   send font("hello, this is a tiny text") to player
+
+# ----- [Normal to Tiny text] ----- #
+
+# Remove everything after "zᴢ" to prevent converting numbers
+function font(s: string) :: string:
+    set {_a::*} to "aᴀ|bʙ|cᴄ|dᴅ|eᴇ|fꜰ|gɢ|hʜ|iɪ|jᴊ|kᴋ|lʟ|mᴍ|nɴ|oᴏ|pᴘ|rʀ|sѕ|tᴛ|uᴜ|wᴡ|xх|yʏ|zᴢ|0₀|1₁|2₂|3₃|4₄|5₅|6₆|7₇|8₈|9₉" split at "|"
+    loop {_a::*}:
+        delete {_a::%loop-index%}
+        set {_a::%first character of loop-value%} to last character of loop-value
+    set {_s::*} to {_s} split at ""
+    loop {_s::*}:
+        add 1 to {_n}
+        set {_s::%loop-index%} to {_a::%loop-value%} if {_a::%loop-value%} exists
+    delete {_s::%{_n}%}
+    return join {_s::*} with ""
+
+
+
+# ----- [Tiny to Normal text] ----- #
+
+# Remove everything after "ᴢz" to prevent converting numbers
+function refont(s: string) :: string:
+    set {_a::*} to "ᴀa|ʙb|ᴄc|ᴅd|ᴇe|ꜰf|ɢg|ʜh|ɪi|ᴊj|ᴋk|ʟl|ᴍm|ɴn|ᴏo|ᴘp|ʀr|ѕs|ᴛt|ᴜu|ᴡw|хx|ʏy|ᴢz|₀0|₁1|₂2|₃3|₄4|₅5|₆6|₇7|₈8|₉9" split at "|"
+    loop {_a::*}:
+        delete {_a::%loop-index%}
+        set {_a::%first character of loop-value%} to last character of loop-value
+    set {_s::*} to {_s} split at ""
+    loop {_s::*}:
+        add 1 to {_n}
+        set {_s::%loop-index%} to {_a::%loop-value%} if {_a::%loop-value%} exists
+    delete {_s::%{_n}%}
+    return join {_s::*} with ""
