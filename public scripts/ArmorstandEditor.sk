@@ -1,0 +1,76 @@
+
+# Skript Made by JustGinoo
+# ArmorstandEditor (v1.0)
+
+# !!! Requires SkBee to work !!!
+
+# ----- [Setup GUI-items] ----- #
+
+on load:
+    set {-armorstandSetting::list::*} to "NoBasePlate", "ShowArms", "Small", "NoGravity", "Invulnerable", "HasVisualFire"
+    loop {-armorstandSetting::list::*}:
+        set {-armorstandSetting::item::%loop-value%} to smooth stone slab named "&fNo Baseplate" with lore "&8Toggle the armorstands baseplate.%NL% %NL%&f&lᴄᴜʀʀᴇɴᴛʟʏ:" with custom nbt from "{Tag:""%loop-value%""}" if loop-value = "NoBasePlate"
+        set {-armorstandSetting::item::%loop-value%} to stick named "&fArms" with lore "&8Toggle the armorstands arms.%NL% %NL%&f&lᴄᴜʀʀᴇɴᴛʟʏ:" with custom nbt from "{Tag:""%loop-value%""}"  if loop-value = "ShowArms"
+        set {-armorstandSetting::item::%loop-value%} to armor stand named "&fMini-size" with lore "&8Toggle the armorstands size.%NL% %NL%&f&lᴄᴜʀʀᴇɴᴛʟʏ:" with custom nbt from "{Tag:""%loop-value%""}"  if loop-value = "Small"
+        set {-armorstandSetting::item::%loop-value%} to feather named "&fNo gravity" with lore "&8Toggle the armorstands gravity.%NL% %NL%&f&lᴄᴜʀʀᴇɴᴛʟʏ:" with custom nbt from "{Tag:""%loop-value%""}"  if loop-value = "NoGravity"
+        set {-armorstandSetting::item::%loop-value%} to totem of undying named "&fInvulnerable" with lore "&8Toggle the armorstands invulnerablity.%NL% %NL%&f&lᴄᴜʀʀᴇɴᴛʟʏ:" with custom nbt from "{Tag:""%loop-value%""}"  if loop-value = "Invulnerable"
+        set {-armorstandSetting::item::%loop-value%} to campfire named "&fBurning" with lore "&8Toggle the armorstands burning animation.%NL% %NL%&f&lᴄᴜʀʀᴇɴᴛʟʏ:" with custom nbt from "{Tag:""%loop-value%""}"  if loop-value = "HasVisualFire"
+
+
+
+# ----- [Armorstand interaction] ----- #
+
+on right click on armor stand:
+    player is sneaking
+    armorstandSettinngsGUI(player, entity)
+
+
+
+# ----- [GUI-click event] ----- #
+
+on inventory click:
+    player's current inventory = (metadata tag "armorstandEditorGUI" of player)
+    cancel event
+
+    clicked slot != gray stained glass pane
+    toggleArmorstandTag((metadata tag "armorstandEditor" of player), (string tag "Tag" of custom nbt of event-item))
+    armorstandSettinngsGUI(player, (metadata tag "armorstandEditor" of player))
+
+
+
+# ----- [Setting GUI] ----- #
+
+function armorstandSettinngsGUI(p: player , e: entity):
+    set metadata tag "armorstandEditor" of {_p} to {_e}
+
+    set {_gui} to chest inventory named "&9ArmorstandEditor" with 3 rows
+    set slot (integers between 0 and 26) of {_gui} to gray stained glass pane
+
+    set {_slot} to 10
+    loop {-armorstandSetting::list::*}:
+        set {_item} to {-armorstandSetting::item::%loop-value%}
+
+        if boolean tag "%loop-value%" of nbt of metadata tag "armorstandEditor" of {_p} = true:
+            add " &8> &aOn" to lore of {_item}
+        if boolean tag "%loop-value%" of nbt of metadata tag "armorstandEditor" of {_p} = false:
+            add " &8> &cOff" to lore of {_item}
+        if boolean tag "%loop-value%" of nbt of metadata tag "armorstandEditor" of {_p} is not set:
+            add " &8> &cOff" to lore of {_item}
+
+        set slot {_slot} of {_gui} to {_item}
+        add 1 to {_slot}
+        add 1 to {_slot} if {_slot} = 13
+
+    open {_gui} to {_p}
+    set metadata tag "armorstandEditorGUI" of {_p} to {_gui}
+
+
+
+# ----- [Settings toggle-function] ----- #
+
+function toggleArmorstandTag(e: entity , tag: string):
+
+    if boolean tag {_tag} of nbt of {_e} != true:
+        set boolean tag {_tag} of nbt of {_e} to true
+    else:
+        set boolean tag {_tag} of nbt of {_e} to false
