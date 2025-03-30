@@ -16,7 +16,7 @@ on load:
 # ----- [Bite time] ----- #
 
 on fish approach:
-    set fishing bite time to (15 ticks) # Change this value if you like
+    set fishing bite time to (15 ticks) # Change this value if you like :)
 
 
 
