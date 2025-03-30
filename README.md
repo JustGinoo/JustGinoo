@@ -34,6 +34,6 @@ Feel free to join!
 MelonRP is a **minecraft reallife/roleplay server** with lots of unique features,\
 that i am only working on when im bored. Any updates are posted on the discord.
 
-- **IP:** ``VirtuLife.net``
+- **IP:** ``MelonRP.de``
 - **Version:** ``Java 1.21+``
-- **Discord:** [virtulife](https://discord.gg/jxbYSTb3eE)
+- **Discord:** [MelonRP](https://discord.gg/) _soon_
