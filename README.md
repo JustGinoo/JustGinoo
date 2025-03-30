@@ -13,7 +13,7 @@
 
 # 📩 Contact
 - **Discord:** ``justginoo``
-- **E-mail:** ``wild.gino@yahoo.com``
+- **E-mail:** ``business.justgino@gmail.com``
 <br>
 
 ## 💎 AdventureSMP
@@ -27,11 +27,11 @@ Feel free to join!
 - **TikTok:** [@adventuresmp](https://www.tiktok.com/@adventuresmp.de)
 <br>
 
-## 🚓 VirtuLife
+## 🚓 MelonRP
 > [!NOTE]
 > This Server is still **WIP** and not **comming out soon**.
 
-VirtuLife is a **minecraft reallife/roleplay server** with lots of unique features,\
+MelonRP is a **minecraft reallife/roleplay server** with lots of unique features,\
 that i am only working on when im bored. Any updates are posted on the discord.
 
 - **IP:** ``VirtuLife.net``
