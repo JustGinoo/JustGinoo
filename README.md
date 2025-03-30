@@ -1,5 +1,5 @@
-                                           My name is Gino and I'm a hobby developer from Germany.
-                                            Mainly working with Skript and starting to lean Java
+                        My name is Gino and I'm a hobby developer from Germany.
+                        Mainly working with Skript and starting to learn Java
 <br>
 
 # 🙋‍♂️ About me
