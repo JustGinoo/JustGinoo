@@ -1,5 +1,10 @@
+
+# Skript Made by JustGinoo
+# CustomFishing (v1.1)
+
 # ----- [Lootpool] ----- #
 
+# You can change these items to create your own lootpool
 on load:
     set {-FishingLoot::common::*} to cod, salmon, seagrass, kelp, sea pickle
     set {-FishingLoot::uncommon::*} to pufferfish, ink sac
@@ -7,37 +12,41 @@ on load:
     set {-FishingLoot::legendary::*} to enchanted book of mending, turtle scute
 
 
+
+# ----- [Bite time] ----- #
+
+on fish approach:
+    set fishing bite time to (15 ticks) # Change this value if you like
+
+
+
 # ----- [Fishing Event] ----- #
 
-on fish:
-    fish state = caught fish:
-        play sound "entity.chicken.egg" with pitch 0 to player
+on fish catch:
+    play sound "entity.chicken.egg" with pitch 0 to player
 
-        chance of 2.5%:
-            set {_item} to random element out of {-FishingLoot::legendary::*}
-            play sound "entity.player.levelup" with pitch 1.5 to player
-            make 25 flame at block above current fish hook of player with extra 0.075
-            fishingAnimation(player, {_item}, 4)
-        if {_item} is not set:
-            chance of 10%:
-                set {_item} to random element out of {-FishingLoot::rare::*}
-                make 25 soul fire flame at block above current fish hook of player with extra 0.075
-                fishingAnimation(player, {_item}, 3)
-        if {_item} is not set:
-            chance of 25%:
-                set {_item} to random element out of {-FishingLoot::uncommon::*}
-                make 10 sneeze at block above current fish hook of player with extra 0.075
-                fishingAnimation(player, {_item}, 2)
-        if {_item} is not set:
-            chance of 100%:
-                set {_item} to random element out of {-FishingLoot::common::*}
-                make 10 cloud at block above current fish hook of player with extra 0.075
-                fishingAnimation(player, {_item}, 1)
+    chance of 2.5%:
+        set {_item} to random element out of {-FishingLoot::legendary::*}
+        play sound "entity.player.levelup" with pitch 1.5 to player
+        make 25 flame at block above current fish hook of player with extra 0.075
+        fishingAnimation(player, {_item}, 4)
+    if {_item} is not set:
+        chance of 10%:
+            set {_item} to random element out of {-FishingLoot::rare::*}
+            make 25 soul fire flame at block above current fish hook of player with extra 0.075
+            fishingAnimation(player, {_item}, 3)
+    if {_item} is not set:
+        chance of 25%:
+            set {_item} to random element out of {-FishingLoot::uncommon::*}
+            make 10 sneeze at block above current fish hook of player with extra 0.075
+            fishingAnimation(player, {_item}, 2)
+    if {_item} is not set:
+        chance of 100%:
+            set {_item} to random element out of {-FishingLoot::common::*}
+            make 10 cloud at block above current fish hook of player with extra 0.075
+            fishingAnimation(player, {_item}, 1)
 
-        set item of fishing caught entity to {_item}
-
-#    fish state = bite:
-#        send title "" with subtitle "&aAngel einziehen!" to player for 1.5 seconds with fadein 0 tick and fade out 0 tick
+    set item of fishing caught entity to {_item}
 
 
 
@@ -46,7 +55,7 @@ on fish:
 function fishingAnimation(p: player , item: item , c: int):
 
     set {_case} to random integer between 0 and 1000000
-    spawn text display at block above current fish hook of {_p}
+    spawn text display at block above block above current fish hook of {_p}
     set {_dt::%{_case}%} to last spawned text display
     set display text background color of {_dt::%{_case}%} to bukkitColor(0,255,255,255)
     set display default text background of {_dt::%{_case}%} to false
