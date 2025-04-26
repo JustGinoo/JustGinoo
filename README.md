@@ -16,17 +16,6 @@
 - **E-mail:** ``business.justgino@gmail.com``
 <br>
 
-## 💎 AdventureSMP
-AdventureSMP is a minecraft SMP server with lots of custom features,\
-that i build up together with [@sluhtie](https://github.com/sluhtie/sluhtie).
-Feel free to join!
-
-- **IP:** ``AdventureSMP.de``
-- **Version:** ``Java 1.21+``
-- **Discord:** [adventuresmp](https://discord.gg/adventuresmp)
-- **TikTok:** [@adventuresmp](https://www.tiktok.com/@adventuresmp.de)
-<br>
-
 ## 🚓 MelonRP
 > [!NOTE]
 > This Server is still **WIP** and not **comming out soon**.
