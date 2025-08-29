@@ -16,13 +16,14 @@
 - **E-mail:** ``business.justgino@gmail.com``
 <br>
 
-## 🚓 MelonRP
+## 🚓 WildSMP
 > [!NOTE]
-> This Server is still **WIP** and not **comming out soon**.
+> This Server is still in BETA phase!
 
-MelonRP is a **minecraft reallife/roleplay server** with lots of unique features,\
-that i am only working on when im bored. Any updates are posted on the discord.
+WildSMP is the best german SMP-Server for a friendly
+vibe clean vanilla styled customazied features. 
+Any updates are posted on the discord.
 
-- **IP:** ``MelonRP.de``
-- **Version:** ``Java 1.21+``
-- **Discord:** [MelonRP](https://discord.gg/) _soon_
+- **IP:** ``WildSMP.de``
+- **Version:** ``Java 1.21.7+``
+- **Discord:** [WildSMP](https://discord.gg/wildsmp)
