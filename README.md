@@ -1,13 +1,13 @@
-                        My name is Gino and I'm a hobby developer from Germany.
-                        Mainly working with Skript and starting to learn Java
+                        My name is Gino and I'm a hobby developer and server Owner of WildSMP
+                        from Germany. Mainly working with Skript and starting to learn Java
 <br>
 
 # 🙋‍♂️ About me
-- **⌛️ Age:** 20
-- **🕹️ Main Games:** Minecaft, Valorant, LoL
+- **⌛️ Age:** 21
+- **🕹️ Main Games:** Minecaft, Valorant, LoL, GTA RP
 - **🌍 Languages:** German, Englisch
 - **🎧 Musik:** Amirap, Lofi and Minecraft music
-- **👷 Job:** Electrician
+- **👷 Job:** Electrician / Minecraft Server-Owner
 <br>
 
 
@@ -16,14 +16,16 @@
 - **E-mail:** ``business.justgino@gmail.com``
 <br>
 
-## 🚓 WildSMP
+## 🌳 WildSMP
 > [!NOTE]
-> This Server is still in BETA phase!
+> This Server is still in BETA phase but public!
 
 WildSMP is the best german SMP-Server for a friendly
 vibe clean vanilla styled customazied features. 
 Any updates are posted on the discord.
 
 - **IP:** ``WildSMP.de``
-- **Version:** ``Java 1.21.7+``
+- **Java Version:** ``1.21.7+``
+- **Bedrock-Port:** ``19132`` (standard)
 - **Discord:** [WildSMP](https://discord.gg/wildsmp)
+- **GitHub:** [wildsmp](https://github.com/JustGinoo/wildsmp)
