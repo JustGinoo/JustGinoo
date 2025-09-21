@@ -4,10 +4,9 @@
 
 # 🙋‍♂️ About me
 - **⌛️ Age:** 21
-- **🕹️ Main Games:** Minecaft, Valorant, LoL, GTA RP
+- **🕹️ Main Games:** Minecaft, Valorant, LoL
 - **🌍 Languages:** German, Englisch
 - **🎧 Musik:** Amirap, Lofi and Minecraft music
-- **👷 Job:** Electrician / Minecraft Server-Owner
 <br>
 
 
@@ -25,7 +24,8 @@ vibe clean vanilla styled customazied features.
 Any updates are posted on the discord.
 
 - **IP:** ``WildSMP.de``
-- **Java Version:** ``1.21.7+``
-- **Bedrock-Port:** ``19132`` (standard)
+- **Java Version:** ``1.21.8+``
+- **Bedrock-IP:** ``bedrock.wildsmp.de``
+- **Bedrock-Port:** ``19132``
 - **Discord:** [WildSMP](https://discord.gg/wildsmp)
-- **GitHub:** [wildsmp](https://github.com/JustGinoo/wildsmp)
+- **GitHub:** [wildsmp](https://github.com/Wild-SMP)
