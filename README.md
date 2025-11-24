@@ -1,5 +1,6 @@
-                        My name is Gino and I'm a hobby developer and server Owner of WildSMP
-                        from Germany. Mainly working with Skript and starting to learn Java
+                        My name is Gino and I'm a hobby developer from Germany.
+                        I worked with skript for minecraft for a long time, but
+                        now im learning to code html and java.
 <br>
 
 # 🙋‍♂️ About me
@@ -14,18 +15,3 @@
 - **Discord:** ``justginoo``
 - **E-mail:** ``business.justgino@gmail.com``
 <br>
-
-## 🌳 WildSMP
-> [!NOTE]
-> This Server is still in BETA phase but public!
-
-WildSMP is the best german SMP-Server for a friendly
-vibe clean vanilla styled customazied features. 
-Any updates are posted on the discord.
-
-- **IP:** ``WildSMP.de``
-- **Java Version:** ``1.21.8+``
-- **Bedrock-IP:** ``bedrock.wildsmp.de``
-- **Bedrock-Port:** ``19132``
-- **Discord:** [WildSMP](https://discord.gg/wildsmp)
-- **GitHub:** [wildsmp](https://github.com/Wild-SMP)
