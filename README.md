@@ -1,6 +1,6 @@
                         My name is Gino and I'm a hobby developer from Germany.
                         I worked with skript for minecraft for a long time, but
-                        now im learning to code html and java.
+                               now im learning to code html and java.
 <br>
 
 # 🙋‍♂️ About me
