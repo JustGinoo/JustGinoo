@@ -8,6 +8,6 @@
 
 
 # 📩 Contact
-- **Discord:** ``justginoo``
+- **Discord:** ``just_gino``
 - **E-mail:** ``business.justgino@gmail.com``
 <br>
