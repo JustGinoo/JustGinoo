@@ -3,7 +3,7 @@
 - **🕹️ Main Games:** Minecaft, Valorant, LoL
 - **🌍 Languages:** German, English
 - **🎧 Musik:** Amirap, Lofi and Minecraft music
-- **📟 Coding:** Skript, Java, HTML
+- **📟 Coding:** Minecraft Skript, Java, HTML, CSS
 <br>
 
 
