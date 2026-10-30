@@ -1,9 +1,8 @@
 # 🙋‍♂️ About me
 - **⌛️ Age:** 22
-- **🕹️ Main Games:** Minecaft, Valorant, LoL
+- **🕹️ Main Games:** Minecaft
 - **🌍 Languages:** German, English
-- **🎧 Musik:** Amirap, Lofi and Minecraft music
-- **📟 Coding:** Minecraft Skript, Java, HTML, CSS
+- **🎧 Musik:** Everything exept german rap
 <br>
 
 
