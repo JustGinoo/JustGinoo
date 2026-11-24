@@ -5,6 +5,9 @@
 - **🎧 Musik:** Everything exept german rap
 <br>
 
+# 🌍 My FREE & Paid content
+[BuildByBit - JustGino's Codes](https://builtbybit.com/store/justginos-codes.861)
+
 
 # 📩 Contact
 - **Discord:** ``just_gino``
